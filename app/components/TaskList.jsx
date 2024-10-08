@@ -54,9 +54,9 @@ export default function RemainingTaskList() {
       {tasks.map((task) => (
         <div
           key={task._id}
-          className=" bg-neutral-300 dark:bg-neutral-800 rounded-3xl mb-2 mx-2 md:w-1/2 md:mx-auto"
+          className=" bg-neutral-300 dark:bg-neutral-800 rounded-3xl md:w-1/2 md:mx-auto mb-2 mx-2"
         >
-          <div className="flex flex-col p-5 gap-4">
+          <div className="flex flex-col p-3 gap-4">
             <h3 className="dm-serif-text-regular text-3xl">{task.title}</h3>
             <ul className="flex flex-col gap-3">
               {task.tasks.map((subtask, index) => (
