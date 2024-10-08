@@ -1,7 +1,6 @@
 "use client";
-import { set } from "mongoose";
 import { useEffect, useState } from "react";
-export default function page() {
+export default function RemainingTaskList() {
   const [remainingTasks, setRemainingTasks] = useState([]);
 
   useEffect(() => {
