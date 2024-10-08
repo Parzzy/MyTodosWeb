@@ -2,10 +2,10 @@ import Link from "next/link";
 import DarkMode from "./DarkMode";
 export default function Navbar() {
   return (
-    <nav className="gap-3 md:gap-6 flex items-center justify-center md:items-center md:justify-center w-full p-3 md:w-1/2 md:mx-auto bg-neutral-200 dark:bg-neutral-900 rounded-3xl">
+    <nav className="gap-3 md:gap-6 flex items-center justify-center md:items-center md:justify-center w-full mx-auto p-3 md:w-fit md:mx-auto bg-neutral-200 dark:bg-neutral-900 rounded-3xl">
       <Link
         href="/"
-        className="dm-serif-text-regular md:p-2 text-xl md:text-3xl hover:bg-neutral-400 dark:hover:bg-neutral-900 rounded"
+        className="dm-serif-text-regular md:p-2 text-xl md:text-3xl sm:text-2xl hover:bg-neutral-400 dark:hover:bg-neutral-900 rounded"
       >
         MyTodos
       </Link>
