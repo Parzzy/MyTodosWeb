@@ -14,7 +14,7 @@ export async function GET(req) {
     // Return the remaining tasks
     return new Response(JSON.stringify(remainingTasks), {
       status: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "Cache-Control": "no-cache" },
     });
   } catch (error) {
     return new Response("Failed to fetch tasks", { status: 500 });

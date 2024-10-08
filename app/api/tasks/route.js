@@ -9,7 +9,7 @@ export async function POST(req) {
     const newTask = new Task({ title, tasks });
     await newTask.save();
     
-    return new Response(JSON.stringify(newTask), { status: 201 });
+    return new Response(JSON.stringify(newTask), { status: 201, headers: { 'Content-Type': 'application/json', "Cache-Control": "no-cache" }});
   } catch (error) {
     return new Response('Failed to create task', { status: 500 });
   }
@@ -20,7 +20,7 @@ export async function GET() {
     await connectToDatabase();
     const tasks = await Task.find({});
     
-    return new Response(JSON.stringify(tasks), { status: 200 });
+    return new Response(JSON.stringify(tasks), { status: 200, headers: { 'Content-Type': 'application/json', "Cache-Control": "no-cache" }});
   } catch (error) {
     return new Response('Failed to fetch tasks', { status: 500 });
   }

@@ -13,7 +13,7 @@ export async function GET(req) {
 
     return new Response(JSON.stringify(completedTasks), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', "Cache-Control": "no-cache" },
     });
   } catch (error) {
     return new Response('Error fetching completed tasks', {

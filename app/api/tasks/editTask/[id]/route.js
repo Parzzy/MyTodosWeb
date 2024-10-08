@@ -14,7 +14,7 @@ export async function GET(req, { params }) {
 
     return new Response(JSON.stringify(task), {
       status: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "Cache-Control": "no-cache" },
     });
   } catch (error) {
     return new Response("Error fetching task", {
@@ -42,7 +42,7 @@ export async function PUT(req, { params }) {
 
     return new Response(JSON.stringify(updatedTask), {
       status: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "Cache-Control": "no-cache" },
     });
   } catch (error) {
     return new Response("Error updating task", {

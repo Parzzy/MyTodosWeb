@@ -1,5 +1,5 @@
-import { connectToDatabase } from '@/lib/mongodb';
-import Task from '@/models/task';
+import { connectToDatabase } from "@/lib/mongodb";
+import Task from "@/models/task";
 
 // Update subtask status
 export async function PUT(req, { params }) {
@@ -9,7 +9,7 @@ export async function PUT(req, { params }) {
 
   const task = await Task.findById(taskId);
   if (!task) {
-    return new Response('Task not found', { status: 404 });
+    return new Response("Task not found", { status: 404 });
   }
 
   task.tasks[subtaskIndex].completed = completed;
@@ -18,7 +18,8 @@ export async function PUT(req, { params }) {
   return new Response(JSON.stringify(task), {
     status: 200,
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
+      "Cache-Control": "no-cache",
     },
   });
 }
